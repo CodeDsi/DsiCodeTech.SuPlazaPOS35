@@ -1,4 +1,7 @@
-﻿using Microsoft.PointOfService;
+﻿using DsiCodeTech.Builder.Generic;
+using DsiCodeTech.Opos.Manager;
+using DsiCodeTech.Opos.Recursos;
+using Microsoft.PointOfService;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -20,16 +23,30 @@ namespace DsiCodeTech.Opos.Common
 
         private Scanner scanner;
 
+        private LineDisplay display;
+
         public DevicesOPOS()
         {
             this.OpenDevicesOpos();
         }
 
+        #region Apertura de Dispositivos
         private void OpenDevicesOpos()
         {
             this.OpenCashDrawer(true,"algo");
+            this.OpenDisplay(true,"algo");
         }
+        #endregion
 
+        #region Cerrar-Dispositivos
+        private void CloseDevicesOpos()
+        {
+           
+        }
+        #endregion
+
+
+        #region OpenDevices
         /// <summary>
         /// Este metodo se encarga de Abrir el Cajon como Dispositivo
         /// </summary>
@@ -57,6 +74,52 @@ namespace DsiCodeTech.Opos.Common
             }
         }
 
+        private void OpenDisplay(bool enable, string nameDeviceType)
+        {
+            try
+            {
+                logger.Info(MessageResources.LoggerInicialize + $"{nameDeviceType}");
+                if (enable)
+                {
+                    DeviceInfo deviceInfo = GetDeviceInfo("LineDisplay", nameDeviceType);
+                    if (deviceInfo == null)
+                    {
+                        throw new BusinessException(MessageResources.LoggerError + nameDeviceType);
+                    }
+                    display = (LineDisplay) posExplorer.CreateInstance(deviceInfo);
+                    display.Open();
+                    display.Claim(200);
+                    display.DeviceEnabled = enable;
+                    logger.Info(MessageResources.LoggerFinalice+$"{nameDeviceType}");
+
+                }
+            }
+            catch (PosException ex)
+            {
+                logger.Error (ex.Message);  
+                logger.Error(MessageResources.LoggerError + $"{nameDeviceType}");
+                throw new BusinessException(MessageResources.LoggerError + nameDeviceType);
+            }
+        }
+
+
+        private void OpenPrinter(bool enable, string nameDeviceType)
+        {
+            try
+            {
+
+            }
+            catch (PosException ex)
+            {
+
+                
+            }
+        }
+
+
+
+
+        #endregion
 
         private DeviceInfo GetDeviceInfo(string deviceType, string nameDeviceType)
         {
