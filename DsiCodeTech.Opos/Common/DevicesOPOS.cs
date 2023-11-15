@@ -107,12 +107,34 @@ namespace DsiCodeTech.Opos.Common
         {
             try
             {
-
+                if (enable) 
+                {
+                    logger.Info(MessageResources.LoggerInicialize + $"{nameDeviceType}");
+                    DeviceInfo deviceInfo = GetDeviceInfo(DeviceType.PosPrinter, nameDeviceType);
+                    if (deviceInfo == null)
+                    {
+                        throw new BusinessException(MessageResources.LoggerError + nameDeviceType);
+                    }
+                    printer =(PosPrinter) posExplorer.CreateInstance(deviceInfo);
+                    printer.Open();
+                    if (!printer.Claimed) 
+                    {
+                        printer.Claim(2000);
+                    }
+                    printer.AsyncMode = false;
+                    printer.DeviceEnabled = enable; //true
+                    printer.RecLetterQuality = enable; //true
+                    ///string fileName = Application aqui va la ruta de la imagen a mostrar en el ticket
+                    string fileImagePrinter = string.Empty;
+                    printer.SetBitmap(1, PrinterStation.Receipt, fileImagePrinter, -11, -2);
+                    logger.Info(MessageResources.LoggerFinalice + $"{deviceInfo}");
+                }
             }
             catch (PosException ex)
             {
-
-                
+                logger.Error(ex.Message);
+                logger.Error(MessageResources.LoggerError + nameDeviceType);
+                throw new BusinessException(MessageResources.LoggerError + nameDeviceType);
             }
         }
 
