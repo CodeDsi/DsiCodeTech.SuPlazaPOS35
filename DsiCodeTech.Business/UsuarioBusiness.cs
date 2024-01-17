@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DsiCodeTech.Common.Exception;
+using DsiCodeTech.Repository.PosCaja;
 
 namespace DsiCodeTech.Business
 {
@@ -40,7 +41,22 @@ namespace DsiCodeTech.Business
         {
             try
             {
-
+                
+                if(usuarioRepository.Count() >0)
+                {
+                    this.usuarioRepository.startTransaction();
+                    usuario usuario= usuarioRepository
+                        .SingleOrDefaultIncludes(p => p.user_name.Equals(nombre) && p.password.Equals(password),
+                        "usuario_permiso", "permiso");
+                    if (usuario is not null)
+                    {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    } 
+                }
+                return nombre.Equals("admin") && password.Equals("admin");
             }
             catch (Exception ex) when (ex is DataException || ex is SqlException)
             {

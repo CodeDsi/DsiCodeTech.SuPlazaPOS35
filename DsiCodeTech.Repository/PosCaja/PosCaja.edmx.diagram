@@ -20,7 +20,7 @@
         <EntityTypeShape EntityType="pos_cajaModel.promocion_articulo" Width="1.5" PointX="10.25" PointY="23.75" IsExpanded="true" />
         <EntityTypeShape EntityType="pos_cajaModel.unidad_medida" Width="1.5" PointX="5.75" PointY="32" IsExpanded="true" />
         <EntityTypeShape EntityType="pos_cajaModel.usuario" Width="1.5" PointX="0.75" PointY="16.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="pos_cajaModel.usuario_permiso" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pos_cajaModel.usuario_permiso" Width="1.75" PointX="3" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="pos_cajaModel.venta_cancelada_articulo" Width="1.5" PointX="5.25" PointY="23" IsExpanded="true" />
         <EntityTypeShape EntityType="pos_cajaModel.venta_devolucion" Width="1.5" PointX="13.25" PointY="18.625" IsExpanded="true" />
         <EntityTypeShape EntityType="pos_cajaModel.venta_devolucion_articulo" Width="1.5" PointX="15.5" PointY="19.375" IsExpanded="true" />
