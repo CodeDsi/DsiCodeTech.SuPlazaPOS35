@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -110,6 +111,7 @@
             this.Controls.Add(this.btnDispose);
             this.Controls.Add(this.btnAuth);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.Text = "Login: Identificacion del Usuario";
             this.groupBox1.ResumeLayout(false);
