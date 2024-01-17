@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,5 +28,25 @@ namespace DsiCodeTech.SuPlazaPOS35.Views
             System.GC.Collect();
             #endregion
         }
+
+        #region variables globales del sistema 
+        private static readonly NLog.Logger logger = LogManager.GetCurrentClassLogger();
+        #endregion
+
+        #region Evento del Boton Login
+        private void btnAuth_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"Ocurrio un error en el sistema: {ex}");
+                logger.Error($"El modulo que genero el error: {this.Name}");
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        }
+        #endregion
     }
 }

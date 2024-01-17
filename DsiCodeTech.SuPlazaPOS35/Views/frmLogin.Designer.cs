@@ -92,6 +92,7 @@
             this.btnAuth.TabIndex = 4;
             this.btnAuth.Text = "&Ingresar";
             this.btnAuth.UseVisualStyleBackColor = true;
+            this.btnAuth.Click += new System.EventHandler(this.btnAuth_Click);
             // 
             // btnDispose
             // 
