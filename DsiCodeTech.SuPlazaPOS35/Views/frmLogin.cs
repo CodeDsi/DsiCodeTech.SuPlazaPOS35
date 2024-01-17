@@ -14,7 +14,18 @@ namespace DsiCodeTech.SuPlazaPOS35.Views
     {
         public frmLogin()
         {
+            #region Posicionamiento dela pantalla en el centro
+            this.CenterToScreen();
+            #endregion
             InitializeComponent();
+        }
+
+        private void btnDispose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            #region Liberacion de la memoria
+            System.GC.Collect();
+            #endregion
         }
     }
 }

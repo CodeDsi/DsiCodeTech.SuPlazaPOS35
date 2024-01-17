@@ -101,6 +101,7 @@
             this.btnDispose.TabIndex = 5;
             this.btnDispose.Text = "&Salir";
             this.btnDispose.UseVisualStyleBackColor = true;
+            this.btnDispose.Click += new System.EventHandler(this.btnDispose_Click);
             // 
             // frmLogin
             // 
