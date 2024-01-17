@@ -4,9 +4,12 @@ using DsiCodeTech.Repository;
 using DsiCodeTech.Repository.Infraestructure;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DsiCodeTech.Common.Exception;
 
 namespace DsiCodeTech.Business
 {
@@ -31,5 +34,22 @@ namespace DsiCodeTech.Business
         }
 
         #endregion
+
+        #region Metodos de Accion
+        public bool ValidarLogin(string nombre, string password)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex) when (ex is DataException || ex is SqlException)
+            {
+
+                throw new BusinessException(Common.Constant.DsiCodeConst.RESULT_WITHEXCPETION_ID, 
+                    Common.Constant.DsiCodeConst.RESULT_WITHEXCPETION, ex);
+            }
+        }
+        #endregion
+
     }
 }
