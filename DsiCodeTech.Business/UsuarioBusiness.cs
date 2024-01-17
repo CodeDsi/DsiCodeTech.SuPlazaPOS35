@@ -37,6 +37,13 @@ namespace DsiCodeTech.Business
         #endregion
 
         #region Metodos de Accion
+        /// <summary>
+        /// Este metodo s encarga de validar al usuario y password
+        /// </summary>
+        /// <param name="nombre">nombre del usuario</param>
+        /// <param name="password´">password del usuario</param>
+        /// <returns>regresa un valor boolean  true/false</returns>
+        /// <exception cref="BusinessException"></exception>
         public bool ValidarLogin(string nombre, string password)
         {
             try
