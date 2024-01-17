@@ -1,4 +1,7 @@
-﻿using NLog;
+﻿using DsiCodeTech.Builder.Generic;
+using DsiCodeTech.Business;
+using DsiCodeTech.Business.Interface;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,7 +41,12 @@ namespace DsiCodeTech.SuPlazaPOS35.Views
         {
             try
             {
-
+                string nombre = this.txtNombre.Text.Trim();
+                string password = this.txtPassword.Text.Trim();
+                if (Builder<UsuarioBusiness>.New.Create().ValidarLogin(nombre, password))
+                {
+                    MessageBox.Show("Usuario Correcto");
+                }
             }
             catch (Exception ex)
             {

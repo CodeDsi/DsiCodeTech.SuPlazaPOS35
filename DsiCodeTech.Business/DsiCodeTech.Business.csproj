@@ -50,6 +50,7 @@
     <Compile Include="Interface\IArticuloBusiness.cs" />
     <Compile Include="Interface\IOfertaBusiness.cs" />
     <Compile Include="Interface\IPosSettingsBusiness.cs" />
+    <Compile Include="Interface\IUsuarioBusiness.cs" />
     <Compile Include="Interface\IVentaBusiness.cs" />
     <Compile Include="Interface\IVentaCanceladaArticuloBusiness.cs" />
     <Compile Include="Interface\IVentaCanceladaBusiness.cs" />

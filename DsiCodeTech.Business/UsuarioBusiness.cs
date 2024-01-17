@@ -14,7 +14,7 @@ using DsiCodeTech.Repository.PosCaja;
 
 namespace DsiCodeTech.Business
 {
-    public class UsuarioBusiness
+    public class UsuarioBusiness: IUsuarioBusiness
     {
         #region Declaracion de variables
         private readonly IUnitOfWork unitOfWork;
