@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DsiCodeTech.SuPlazaPOS35.Views;
+using System;
 using System.Windows.Forms;
 
 namespace DsiCodeTech.SuPlazaPOS35
@@ -16,7 +14,7 @@ namespace DsiCodeTech.SuPlazaPOS35
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmLogin());
         }
     }
 }
