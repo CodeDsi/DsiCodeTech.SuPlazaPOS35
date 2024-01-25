@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DsiCodeTech.Builder.Generic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DsiCodeTech.Opos", "DsiCodeTech.Opos\DsiCodeTech.Opos.csproj", "{3D7CC7DD-C932-4FCB-9FAA-620E25AB04FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DsiCodeTech.Domain", "DsiCodeTech.Domain\DsiCodeTech.Domain.csproj", "{8F3F359A-3E79-4F25-8557-B0FEDF9D5AE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{3D7CC7DD-C932-4FCB-9FAA-620E25AB04FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D7CC7DD-C932-4FCB-9FAA-620E25AB04FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D7CC7DD-C932-4FCB-9FAA-620E25AB04FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F3F359A-3E79-4F25-8557-B0FEDF9D5AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F3F359A-3E79-4F25-8557-B0FEDF9D5AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F3F359A-3E79-4F25-8557-B0FEDF9D5AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F3F359A-3E79-4F25-8557-B0FEDF9D5AE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
